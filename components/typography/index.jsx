@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 
-const Typography = ({ type, children, sx, fontfamily }) => {
+const Typography = ({ type,value, children, sx, fontfamily }) => {
 	const styles = StyleSheet.create({
 		text24: {
 			fontSize: hp("3%"),

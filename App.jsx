@@ -1,50 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import CustButton from "./components/button";
-import Container, { Wrapper } from "./components/container";
-import Typography from "./components/typography";
-import { Ionicons } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from "./screens/auth/login";
+import SignUP from "./screens/auth/signUp";
+import Profile from "./screens/profile/profile";
 
+const Stack = createStackNavigator();
 
 export default function App() {
+
 	return (
-		<Container>
-			<Wrapper sx={{
-				justifyContent: "center"
+		<NavigationContainer>
+			<Stack.Navigator 
+			screenOptions={{
+				headerShown: false,
 			}}
 			>
-				{/* <CustButton type="close" onPress={() => console.log("called")} /> */}
-				<View style={styles.container}>
-					<Typography type="text24" sx={{
-						color: "light-blue"
-					}}>Check Your Mail</Typography>
-					<Typography type="text16" sx={{
-						color: "light-blue",
-						textAlign: "center"
-					}}>We have sent a password reset instructions to your email.
-					</Typography>
-					
-					<CustButton type="rounded" >
-						<Typography type="text16" sx={{
-							color: "white",
-							textAlign: "center"
-						}}>Open Email App
-						</Typography>
-					</CustButton>
-					<Typography type="text20" sx={{
-
-						textAlign: "center"
-					}}>
-						<Typography type="text20" sx={{
-							color: "blue",
-							textAlign: "center"
-						}}>Skip,
-						</Typography>
-						I’ll confirm later
-					</Typography>
-				</View>
-			</Wrapper>
-		</Container>
+				<Stack.Screen name="login" component={Login} />
+				<Stack.Screen name="signup" component={SignUP} />
+				<Stack.Screen name="profile" component={Profile} />
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 }
 
@@ -54,12 +31,13 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
-	//  <Image
-		//   source={{ uri: 'https://example.com/image.jpg' }}
-		//   style={styles.image}
-		// />
 
-		//  <Image
-		//   source={require('./assets/image.jpg')} // Assuming the image is located in the 'assets' folder
-		//   style={styles.image}
-		// />
+	//  <Image
+	// 	  source={{ uri: 'https://example.com/image.jpg' }}
+	// 	  style={styles.image}
+	// 	/>
+
+	// 	 <Image
+	// 	  source={require('./assets/image.jpg')} // Assuming the image is located in the 'assets' folder
+	// 	  style={styles.image}
+	// 	/>

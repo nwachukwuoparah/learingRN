@@ -6,7 +6,7 @@ import {
 } from "react-native-responsive-screen";
 
 
-export default function Container({ children }) {
+export default function Container({ children,sx }) {
 	const styles = StyleSheet.create({
 		body: {
 			width: wp("100%"),
@@ -15,7 +15,7 @@ export default function Container({ children }) {
 			justifyContent: "center",
 		}
 	})
-	return <SafeAreaView style={styles.body}>{children}</SafeAreaView>;
+	return <SafeAreaView style={{...styles.body,...sx}}>{children}</SafeAreaView>;
 }
 
 export function Wrapper({ children, sx }) {
@@ -23,6 +23,8 @@ export function Wrapper({ children, sx }) {
 		body: {
 			width: "90%",
 			height: "100%",
+			alignItems: "center",
+			justifyContent:"center"
 		}
 	})
 	return <View style={{ ...styles.body, ...sx }}>{children}</View>;
