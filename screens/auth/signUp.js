@@ -8,7 +8,7 @@ export default function SignUP({ navigation, route }) {
   return (
     <Container sx={{ backgroundColor: "blue" }}>
       <Wrapper>
-        <TouchableOpacity onPress={() => navigation.navigate("profile")}>
+        <TouchableOpacity onPress={() => navigation.navigate("bottomNavigation")}>
           <Typography type="text20">Sign up</Typography>
         </TouchableOpacity>
 

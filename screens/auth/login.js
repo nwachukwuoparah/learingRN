@@ -9,7 +9,7 @@ export default function Login({ navigation, route }) {
   return (
     <Container>
       <Wrapper>
-        <TouchableOpacity onPress={() => navigation.navigate("signup")}>
+        <TouchableOpacity onPress={() => navigation.navigate("signup")} >
           <Typography type="text24">
             login
           </Typography>
